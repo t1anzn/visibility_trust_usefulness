@@ -2,23 +2,37 @@
 
 ## Technical foundations with ethical implications
 
-Your ultrasonic LED alert system operates on principles that warrant both technical and ethical examination:
+![Overview of arduino UNO components](arduino-body.png)
+
+This ultrasonic LED alert system operates on principles that warrant both technical and ethical examination:
+
+![arduino and sensor4](ultrasonic-arduino.jpg)
 
 ### Sensor technology and its limitations
 
 The HC-SR04 ultrasonic sensor functions by emitting high-frequency sound waves (40kHz) that humans cannot hear, raising questions about:
+
+![ultrasonicsensor](ultrasonicsensor.jpg)
+
+
 - **Consent to monitoring**: People cannot detect when they're being scanned
+  
 - **False positives**: The sensor cannot distinguish between threats and innocent movements
+  
 - **Technical blindspots**: Certain materials absorb rather than reflect ultrasonic waves, creating security gaps
+  
 - **Environmental impacts**: Some research suggests ultrasonic emissions may disturb certain animals
 
 ### The graduated alert system
 
-Your implementation uses a two-tier visual alert system:
+This implementation uses a two-tier visual alert system:
+
 - **Green LED** (50-350cm): Represents medium-distance detection, a subtle early warning
+  
 - **Red LED** (0-50cm): Indicates close proximity, suggesting immediate attention
 
 This colour-coded approach has both technical and social dimensions:
+
 - The colours align with cultural conditioning (green = safe/proceed, red = danger/stop)
 - The blinking pattern (500ms intervals) attracts attention through temporal change
 - The binary nature (only two states) drastically simplifies complex proximity situations
@@ -26,15 +40,20 @@ This colour-coded approach has both technical and social dimensions:
 
 ### Data processing considerations
 
-Your code implements several data handling techniques that merit scrutiny:
+The code implements several data handling techniques that need to be  scrutinised:
+
 - **Averaging algorithm**: The rolling average of 5 readings reduces false alerts but introduces a delay in response
+  
 - **Slowed detection cycle**: Checking only once per second (1000ms) prioritises system stability over immediate awareness
+  
 - **Serial output**: While primarily for debugging, this represents data collection that could be expanded
-- **Non-persistent monitoring**: The system doesn't currently store historical data, limiting long-term surveillance capabilities
+
+- **Non-persistent monitoring**: The system doesn't currently store historical data, limiting long-term surveillance capabilities - THIS IS NOT WHAT I AM SAYING YOU SHOULD DO BUT HOW A SURVEILLANCE SYSTEM WORKS! 
+  WHY????
 
 ## Conceptual similarities with established surveillance technologies
 
-Your ultrasonic LED alert system shares fundamental principles with widely deployed surveillance technologies, while maintaining its own distinctive characteristics:
+THIS ultrasonic LED alert system shares fundamental principles with widely deployed surveillance technologies, while maintaining its own distinctive characteristics:
 
 ### Comparison with CCTV systems
 
@@ -77,7 +96,8 @@ Your ultrasonic LED alert system shares fundamental principles with widely deplo
 
 ### Security versus privacy
 
-While your system provides security benefits, it also represents constant monitoring that may:
+While this system provides security benefits, it also represents constant monitoring that may:
+
 - Erode personal privacy in supposedly "safe" spaces
 - Create a feeling of perpetual observation that affects psychological wellbeing
 - Contribute to what scholars call "surveillance anxiety" – the constant awareness of being monitored
@@ -85,6 +105,7 @@ While your system provides security benefits, it also represents constant monito
 ### Trust undermining
 
 Contrary to building trust, visible surveillance can actually damage it:
+
 - Signals a fundamental distrust of individuals in the monitored space
 - May create adversarial relationships between security operators and those being watched
 - Often assumes guilt rather than innocence as the default position
@@ -99,6 +120,7 @@ The "unseen observer" concept highlights a troubling dynamic in modern surveilla
 ### Resource distribution concerns
 
 Proximity detection systems represent resources that could be allocated differently:
+
 - Investment in technological solutions often diverts resources from addressing root causes of security concerns
 - Creates security disparities between those who can afford such systems and those who cannot
 - May displace risk rather than reducing it (pushing potential threats to less-monitored areas)
@@ -107,14 +129,18 @@ Proximity detection systems represent resources that could be allocated differen
 
 ### Detection principles
 
-Most surveillance systems, including yours, employ one of three core detection methods:
-- **Boundary penetration**: Detecting crossing of a defined perimeter (your system, door/window sensors)
-- **Presence detection**: Identifying something that shouldn't be present (your system, motion sensors)
-- **Behavioural analysis**: Looking for suspicious patterns (advanced CCTV, not present in your system)
+Most surveillance systems, including this, employ one of three core detection methods:
+
+- **Boundary penetration**: Detecting crossing of a defined perimeter (this system, door/window sensors)
+  
+- **Presence detection**: Identifying something that shouldn't be present (this system, motion sensors)
+  
+- **Behavioural analysis**: Looking for suspicious patterns (advanced CCTV, not present in this system)
 
 ### Alert mechanisms
 
-Your LED indicators represent one point on a spectrum of alert approaches:
+The LED indicators represent one point on a spectrum of alert approaches:
+
 - **Silent alerts** (your green LED): For awareness without escalation
 - **Attention alerts** (your red LED): Requiring immediate consideration
 - **Action demands** (not in your system): Sirens, strobes, or messages requiring immediate response
@@ -123,15 +149,18 @@ Your LED indicators represent one point on a spectrum of alert approaches:
 ### Information flow architecture
 
 Security systems typically follow one of three information patterns:
-- **Local-only** (like your system): Information stays within the immediate environment
+- **Local-only** (like this system): Information stays within the immediate environment
 - **Centrally monitored**: Data funnels to a security operations centre
 - **Networked**: Information distributed across multiple stakeholders (common in modern systems)
 
 ## Critical perspectives in security studies
 
 Security scholars increasingly question the fundamental assumptions behind such systems:
+
 - Dr Shoshana Zuboff (Oxford University) warns of "surveillance capitalism" in her work on how surveillance becomes normalised
+  
 - The Royal United Services Institute has published critical examinations of the "techno-security paradigm"
+  
 - Privacy International documents how seemingly benign monitoring systems enable more intrusive surveillance over time
 
 ## Contemporary surveillance system comparisons
@@ -139,14 +168,16 @@ Security scholars increasingly question the fundamental assumptions behind such 
 ### Smart doorbells
 
 Modern video doorbells represent an interesting comparison:
-- They often use both motion detection (similar to your system) and visual verification
-- They typically connect to broader networks, unlike your standalone approach
+
+- They often use both motion detection (similar to this system) and visual verification
+- They typically connect to broader networks, unlike this standalone approach
 - They blend surveillance with convenience functions, obscuring their security role
 - They often incorporate two-way communication, extending beyond passive monitoring
 
 ### Workplace monitoring systems
 
 Employee surveillance systems share conceptual foundations with your project:
+
 - They establish awareness zones where certain behaviours are detected
 - They often employ visual indicators to signal operational status
 - They frequently implement arbitrary thresholds for what constitutes "suspicious" behaviour
@@ -154,7 +185,7 @@ Employee surveillance systems share conceptual foundations with your project:
 
 ### Public space surveillance
 
-Urban monitoring networks represent scaled-up versions of the principles in your system:
+Urban monitoring networks represent scaled-up versions of the principles in this system:
 
 - Automated detection of presence in designated areas
   
@@ -165,7 +196,7 @@ Urban monitoring networks represent scaled-up versions of the principles in your
 - Arbitrary technical decisions about thresholds embedded in seemingly objective systems
 
 
-The visual feedback system has significant psychological impacts:
+### The visual feedback system has significant psychological impacts:
 
 - **Constant awareness**: Blinking LEDs create persistent awareness of being monitored
   
@@ -181,7 +212,7 @@ More ethically nuanced approaches to security might include:
 
 - Community-based security models that build collective responsibility rather than technological monitoring
   
-- Privacy-by-design systems that accomplish security goals while minimising surveillance
+- Privacy-by-design systems that accomplish security goals while minimising (GETTING RID OF) surveillance
   
 - Democratic oversight mechanisms for deployment of surveillance technologies
   
@@ -212,11 +243,17 @@ This system, while it looks straightforward, shares conceptual foundations with 
 ## Balanced technical-ethical approaches
 
 A more nuanced implementation might consider:
+
 - **Adaptive thresholds**: Adjusting sensitivity based on time of day or occupancy patterns
+  
 - **Consent indicators**: Adding an indicator showing when monitoring is active
+  
 - **Timeout features**: Automatically disabling after periods of inactivity
+  
 - **Privacy zones**: Implementing code to ignore certain areas within detection range
+  
 - **Graduated responses**: Expanding beyond binary red/green to provide more nuanced alerts
+  
 - **Local processing guarantees**: Ensuring all data processing occurs locally without external transmission
 
 ## Resources and references
@@ -234,7 +271,6 @@ A more nuanced implementation might consider:
    https://www.security.honeywell.com/
 
 5. **Privacy Scholarship**: "The Age of Surveillance Capitalism" by Shoshana Zuboff examines how surveillance becomes normalised
-   https://www.publicaffairsbooks.com/titles/shoshana-zuboff/the-age-of-surveillance-capitalism/9781610395694/
 
 6. **RUSI Reports**: The Royal United Services Institute publishes critical analyses of security technologies
    https://rusi.org/explore-our-research/publications/whitehall-reports/big-brother-goes-market-reality-vs-rhetoric-surveillance-technologies
