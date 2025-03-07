@@ -21,7 +21,7 @@ const int redLedPin = 4;    // Red LED pin
 const int greenLedPin = 5;  // Green LED pin
 
 // Detection parameters
-const int maxDistance = 350;  // Maximum distance to detect (in cm)
+const int maxDistance = 250;  // Maximum distance to detect (in cm)
 const int minDistance = 50;   // Distance for red alert zone (in cm)
 
 // Blinking parameters
@@ -51,7 +51,7 @@ unsigned long lastOutputTime = 0;
 const int outputInterval = 500;  // Output serial info every 500ms
 
 // Timing for concept reminder
-const unsigned long conceptInterval = 60000;  // Print concept every minute
+const unsigned long conceptInterval = 30000;  // Print concept every minute
 unsigned long lastConceptTime = 0;
 
 void setup() {
@@ -124,8 +124,8 @@ void loop() {
   } 
   else {
     // No object in range - turn off LEDs
-    digitalWrite(redLedPin, LOW);
-    digitalWrite(greenLedPin, LOW);
+    digitalWrite(redLedPin, HIGH);
+    digitalWrite(greenLedPin, HIGH);
   }
   
   // Send status to serial monitor less frequently
